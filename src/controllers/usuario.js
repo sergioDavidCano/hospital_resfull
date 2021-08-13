@@ -11,19 +11,19 @@ ctrl.addCrear = async (req, res) => {
         password: bcrypt.hashSync(password, 10),
         role
     }
-    if (email === undefined) {
+    if (!email) {
         return res.status(400).json({
             ok: false,
             mensaje: 'El email es necesario'
         });
     }
-    if (username === undefined) {
+    if (!username) {
         return res.status(400).json({
             ok: false,
             mensaje: 'El nombre es necesario'
         });
     }
-    if (password === undefined) {
+    if (!password) {
         return res.status(400).json({
             ok: false,
             mensaje: 'La contraseña es necesario'
